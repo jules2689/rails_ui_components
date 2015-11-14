@@ -1,0 +1,58 @@
+<% (UiComponentHelper::ALL_ELEMENTS - UiComponentHelper::TABLE).each do |element| %>
+  <%= self.send element, classes: "banana" do %>
+    This is a <%= element %> tag
+  <% end %>
+<% end %>
+
+<%= button_group "aria-label": "Labelling" do %>
+  <%= button primary: true do %>
+    Testing
+  <% end %>
+  <%= button primary: true do %>
+    Testing 2
+  <% end %>
+  <%= button primary: true do %>
+    Testing 3
+  <% end %>
+<% end %>
+
+<%= table classes: "blah", sm: true, striped: true, responsive: true do %>
+
+  <%= thead classes: "thead-banana" do %>
+    <%= tr classes: "tr-banana" do %>
+      <%= th do %>
+        Fresh Banana
+        <%= image src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRgDKJeeHPHtfNrm4Z9ghtI-8l6Bpdb-Vf0vcyk4cM9ZWSWWJsXYxmOQ3Q", alt: "hello", circle: true %>
+      <% end %>
+      <%= th do %>Ripe Banana<% end %>
+      <%= th do %>Old Banana<% end %>
+    <% end %>
+  <% end %>
+
+  <%= tbody do %>
+    <%= tr classes: "tr-banana" do %>
+      <%= td do %>Fresh Banana<% end %>
+      <%= td do %>Ripe Banana<% end %>
+      <%= td do %>Old Banana<% end %>
+    <% end %>
+
+    <%= tr classes: "tr-banana" do %>
+      <%= td do %>Fresh Banana<% end %>
+      <%= td do %>Ripe Banana<% end %>
+      <%= td do %>Old Banana<% end %>
+    <% end %>
+
+    <%= tr classes: "tr-banana" do %>
+      <%= td do %>Fresh Banana<% end %>
+      <%= td do %>Ripe Banana<% end %>
+      <%= td do %>Old Banana<% end %>
+    <% end %>
+
+    <%= tr classes: "tr-banana" do %>
+      <%= td do %>Fresh Banana<% end %>
+      <%= td do %>Ripe Banana<% end %>
+      <%= td do %>Old Banana<% end %>
+    <% end %>
+  <% end %>
+
+<% end %>
