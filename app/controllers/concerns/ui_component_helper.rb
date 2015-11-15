@@ -16,8 +16,8 @@ module UiComponentHelper
 
     define_method element do |*args, &block|
       options = args.first
-      options[:class] = options[:class].strip
-      
+      options[:class] = options[:class].try(:strip) if options
+
       content_tag element, options do
         block.call if block
       end
