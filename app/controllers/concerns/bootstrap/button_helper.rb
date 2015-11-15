@@ -4,6 +4,7 @@ module Bootstrap
 
     BUTTON_CLASSES = %w( primary secondary success warning danger link ).freeze
     SIZE_CLASSES = %w( lg sm block ).freeze
+    ACTIVE_CLASSES = %w( active disabled ).freeze
 
     def button(*args, &block)
       element_params = args.first || {}
@@ -24,7 +25,7 @@ module Bootstrap
         classes << " btn-#{class_type}" if element_params[class_type.to_sym]
       end
 
-      %w( active disabled ).each do |class_type|
+      ACTIVE_CLASSES.each do |class_type|
         classes << " #{class_type}" if element_params[class_type.to_sym]
       end
 
@@ -35,7 +36,7 @@ module Bootstrap
       element_params = args.first || {}
 
       label = element_params[:"aria-label"] || ""
-      classes = element_params[:classes] || ""
+      classes = element_params[:class] || ""
       classes << " btn-group"
 
       ::UiComponentHelper.instance_method(:div).bind(self).call(class: classes, role: "group", "aria-label": label, &block)

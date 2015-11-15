@@ -9,13 +9,15 @@ module UiComponentHelper
   FIGURE = %w( figure figcaption )
   MISC = %w( attr button )
   NAV = %w( nav )
-  ALL_SELF_CONTAINED_ELEMENTS = [HEADERS, TEXT, BLOCK, CODE, MISC].flatten.freeze
+  ALL_SELF_CONTAINED_ELEMENTS = [HEADERS, TEXT, BLOCK, CODE, MISC, FIGURE].flatten.freeze
   ALL_ELEMENTS = [ALL_SELF_CONTAINED_ELEMENTS, LIST, TABLE, NAV].flatten.freeze
 
   ALL_ELEMENTS.each do |element|
 
     define_method element do |*args, &block|
       options = args.first
+      options[:class] = options[:class].strip
+      
       content_tag element, options do
         block.call if block
       end
