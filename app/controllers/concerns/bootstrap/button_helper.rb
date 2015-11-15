@@ -39,7 +39,7 @@ module Bootstrap
       classes = element_params[:class] || ""
       classes << " btn-group"
 
-      ::UiComponentHelper.instance_method(:div).bind(self).call(class: classes, role: "group", "aria-label": label, &block)
+      ::UiComponentHelper.instance_method(:div).bind(self).call(class: classes, role: "group", "aria-label" => label, &block)
     end
 
   end
