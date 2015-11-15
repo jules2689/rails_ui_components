@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsUiComponents</title>
+  <title>Rails UI Components - <%= yield :title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= nav do %>
+    <%= nav_responsive_wrapper do %>
+      <%= nav_brand do %><%= yield :title %><% end %>
+      <%= nav_links do %>
+        <%= nav_link link: "table" do %>Table Elements<% end %>
+        <%= nav_link link: "headers" do %>Header Elements<% end %>
+        <%= nav_link link: "misc" do %>Misc Elements<% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= div class: "container" do %>
+    <%= yield %>
+  <% end %>
 
 </body>
 </html>

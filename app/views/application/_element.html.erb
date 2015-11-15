@@ -1,0 +1,15 @@
+<%= tr do %>
+  <%= td class: "text-right" do %>
+    <%= self.send element, classes: "banana" do %>
+      This is <%= indefinite_articlerize(element) %> tag
+    <% end %>
+  <% end %>
+
+  <%= td do %>
+    <%= pre do %>
+      <%= "<%=" %> <%= element %> classes: "banana" do %>
+        This is <%= indefinite_articlerize(element) %> tag
+      <%% end %>
+    <% end %>
+  <% end %>
+<% end %>

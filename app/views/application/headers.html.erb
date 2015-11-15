@@ -1,0 +1,7 @@
+<% content_for :title do %>Header Elements<% end %>
+
+<%= table do %>
+  <% UiComponentHelper::HEADERS.each do |element| %>
+    <%= render "element", element: element %>
+  <% end %>
+<% end %>

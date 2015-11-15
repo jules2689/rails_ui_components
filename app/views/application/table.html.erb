@@ -1,0 +1,81 @@
+<% content_for :title do %>Table Elements<% end %>
+
+<%= div class: "col-md-7" do %>
+  <%= table classes: "blah", sm: true, striped: true, responsive: true do %>
+    <%= thead classes: "thead-banana" do %>
+      <%= tr classes: "tr-banana" do %>
+        <%= th do %>Fresh Banana<% end %>
+        <%= th do %>Ripe Banana<% end %>
+        <%= th do %>Old Banana<% end %>
+      <% end %>
+    <% end %>
+
+    <%= tbody do %>
+      <%= tr classes: "tr-banana" do %>
+        <%= td do %>Fresh Banana<% end %>
+        <%= td do %>Ripe Banana<% end %>
+        <%= td do %>Old Banana<% end %>
+      <% end %>
+
+      <%= tr classes: "tr-banana" do %>
+        <%= td do %>Fresh Banana<% end %>
+        <%= td do %>Ripe Banana<% end %>
+        <%= td do %>Old Banana<% end %>
+      <% end %>
+
+      <%= tr classes: "tr-banana" do %>
+        <%= td do %>Fresh Banana<% end %>
+        <%= td do %>Ripe Banana<% end %>
+        <%= td do %>Old Banana<% end %>
+      <% end %>
+
+      <%= tr classes: "tr-banana" do %>
+        <%= td do %>Fresh Banana<% end %>
+        <%= td do %>Ripe Banana<% end %>
+        <%= td do %>Old Banana<% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= div class: "col-md-5" do %>
+  <%= pre do %>
+
+    <%%= table classes: "blah", sm: true, striped: true, responsive: true do %>
+      <%%= thead classes: "thead-banana" do %>
+        <%%= tr classes: "tr-banana" do %>
+          <%%= th do %>Fresh Banana<%% end %>
+          <%%= th do %>Ripe Banana<%% end %>
+          <%%= th do %>Old Banana<%% end %>
+        <%% end %>
+      <%% end %>
+
+      <%%= tbody do %>
+        <%%= tr classes: "tr-banana" do %>
+          <%%= td do %>Fresh Banana<%% end %>
+          <%%= td do %>Ripe Banana<%% end %>
+          <%%= td do %>Old Banana<%% end %>
+        <%% end %>
+
+        <%%= tr classes: "tr-banana" do %>
+          <%%= td do %>Fresh Banana<%% end %>
+          <%%= td do %>Ripe Banana<%% end %>
+          <%%= td do %>Old Banana<%% end %>
+        <%% end %>
+
+        <%%= tr classes: "tr-banana" do %>
+          <%%= td do %>Fresh Banana<%% end %>
+          <%%= td do %>Ripe Banana<%% end %>
+          <%%= td do %>Old Banana<%% end %>
+        <%% end %>
+
+        <%%= tr classes: "tr-banana" do %>
+          <%%= td do %>Fresh Banana<%% end %>
+          <%%= td do %>Ripe Banana<%% end %>
+          <%%= td do %>Old Banana<%% end %>
+        <%% end %>
+      <%% end %>
+    <%% end %>
+
+  <% end %>
+<% end %>

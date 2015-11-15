@@ -18,7 +18,7 @@ module Bootstrap
       end
 
       if element_params[:responsive]
-        div classes: "table-responsive" do
+        div class: "table-responsive" do
           call_super(:table, classes, &block)
         end
       else

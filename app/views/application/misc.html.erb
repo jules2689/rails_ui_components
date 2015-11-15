@@ -1,0 +1,50 @@
+<% content_for :title do %>Misc Elements<% end %>
+
+<%= table responsive: true do %>
+  <% [UiComponentHelper::TEXT, UiComponentHelper::BLOCK, UiComponentHelper::CODE, UiComponentHelper::MISC].flatten.each do |element| %>
+    <%= render "element", element: element %>
+  <% end %>
+
+  <%= tr do %>
+    <%= td class: "text-right" do %>
+      <%= button_group "aria-label": "Labelling" do %>
+        <%= button primary: true do %>
+          Testing
+        <% end %>
+        <%= button primary: true do %>
+          Testing 2
+        <% end %>
+        <%= button primary: true do %>
+          Testing 3
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= td do %>
+      <%= pre do %>
+        <%%= button_group "aria-label": "Labelling" do %>
+          <%%= button primary: true do %>
+            Testing
+          <%% end %>
+          <%%= button primary: true do %>
+            Testing 2
+          <%% end %>
+          <%%= button primary: true do %>
+            Testing 3
+          <%% end %>
+        <%% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= tr do %>
+    <%= td class: "text-right" do %>
+      <%= image src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRgDKJeeHPHtfNrm4Z9ghtI-8l6Bpdb-Vf0vcyk4cM9ZWSWWJsXYxmOQ3Q", alt: "hello", circle: true %>
+    <% end %>
+    <%= td do %>
+      <%= pre do %>
+        <%%= image src: "...", alt: "hello", circle: true %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<% end %>
