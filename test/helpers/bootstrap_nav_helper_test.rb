@@ -13,7 +13,7 @@ class Bootstrap::NavHelperTest < ActionView::TestCase
 
   test "nav render with bg classes" do
     Bootstrap::NavHelper::BG_CLASSES.each do |n_class|
-      result = nav class: "banana", "#{n_class}": true do
+      result = nav class: "banana", "#{n_class}" => true do
         "banana"
       end
       assert_equal "<nav class=\"banana navbar bg-#{n_class} navbar-light\">banana</nav>", result
@@ -22,7 +22,7 @@ class Bootstrap::NavHelperTest < ActionView::TestCase
 
   test "nav render with nav classes" do
     Bootstrap::NavHelper::NAV_CLASSES.each do |n_class|
-      result = nav class: "banana", "#{n_class}": true do
+      result = nav class: "banana", "#{n_class}" => true do
         "banana"
       end
       assert_equal "<nav class=\"banana navbar navbar-#{n_class} bg-faded\">banana</nav>", result

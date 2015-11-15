@@ -11,7 +11,7 @@ class Bootstrap::ImageHelperTest < ActionView::TestCase
 
   test "image render with classes" do
     Bootstrap::ImageHelper::IMAGE_CLASSES.each do |i_class|
-      result = image class: "banana", "#{i_class}": true do
+      result = image class: "banana", "#{i_class}" => true do
         "banana"
       end
       assert_equal "<img src=\"\" class=\"banana img-#{i_class}\" alt=\"\">banana</img>", result

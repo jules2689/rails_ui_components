@@ -16,11 +16,11 @@ module Bootstrap
       classes << " navbar"
 
       BG_CLASSES.each do |class_type|
-        classes << " bg-#{class_type}" if element_params[class_type.to_sym]
+        classes << " bg-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       NAV_CLASSES.each do |class_type|
-        classes << " navbar-#{class_type}" if element_params[class_type.to_sym]
+        classes << " navbar-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       classes << " navbar-light" unless classes.include?("navbar-")
@@ -46,7 +46,7 @@ module Bootstrap
 
       ## FIXME: TODO: Button not outputting
       div do
-        button class: "navbar-toggler hidden-sm-up", type: "button", "data-toggle": "collapse", "data-target": "##{id}" do
+        button class: "navbar-toggler hidden-sm-up", type: "button", "data-toggle" => "collapse", "data-target" => "##{id}" do
           "&#9776;"
         end
         div class: "collapse navbar-toggleable-xs", id: id, &block

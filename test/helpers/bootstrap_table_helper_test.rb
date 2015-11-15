@@ -13,7 +13,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
 
   test "table render with classes" do
     Bootstrap::TableHelper::GENERAL_CLASSES.each do |t_class|
-      result = table class: "banana", "#{t_class}": true do
+      result = table class: "banana", "#{t_class}" => true do
         "banana"
       end
       assert_equal "<table class=\"banana table table-#{t_class}\">banana</table>", result
@@ -38,7 +38,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
 
   test "thead render with classes" do
     Bootstrap::TableHelper::HEAD_CLASSES.each do |t_class|
-      result = thead class: "banana", "#{t_class}": true do
+      result = thead class: "banana", "#{t_class}" => true do
         "banana"
       end
       assert_equal "<thead class=\"banana thead-#{t_class}\">banana</thead>", result
@@ -56,7 +56,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
 
   test "tr render with classes" do
     Bootstrap::TableHelper::CONTEXTUAL_CLASSES.each do |t_class|
-      result = tr class: "banana", "#{t_class}": true do
+      result = tr class: "banana", "#{t_class}".to_sym => true do
         "banana"
       end
       assert_equal "<tr class=\"banana table-#{t_class}\">banana</tr>", result
@@ -74,7 +74,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
 
   test "td render with classes" do
     Bootstrap::TableHelper::CONTEXTUAL_CLASSES.each do |t_class|
-      result = td class: "banana", "#{t_class}": true do
+      result = td class: "banana", "#{t_class}" => true do
         "banana"
       end
       assert_equal "<td class=\"banana table-#{t_class}\">banana</td>", result

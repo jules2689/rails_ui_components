@@ -25,7 +25,7 @@ module UiComponentHelper
 
   end
 
-  def image(classes:, src:, alt:, &block)
+  def image(classes: '', src: '', alt: '', &block)
     content_tag :img, 'src' => src, 'class' => classes, 'alt' => alt do
       block.call if block
     end
@@ -33,6 +33,10 @@ module UiComponentHelper
 
   def call_super(method, classes, &block)
     ::UiComponentHelper.instance_method(method).bind(self).call(class: classes.strip, &block)
+  end
+
+  def check_for_class(params, class_type)
+    params[class_type.to_sym] || params[class_type]
   end
 
 end 

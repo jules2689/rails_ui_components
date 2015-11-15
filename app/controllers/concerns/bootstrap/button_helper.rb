@@ -14,19 +14,19 @@ module Bootstrap
       classes << " btn"
 
       BUTTON_CLASSES.each do |class_type|
-        if element_params[class_type.to_sym] && element_params[:outline]
+        if check_for_class(element_params, class_type) && check_for_class(element_params, "outline")
           classes << " btn-#{class_type}-outline"
-        elsif element_params[class_type.to_sym]
+        elsif check_for_class(element_params, class_type)
           classes << " btn-#{class_type}"
         end
       end
 
       SIZE_CLASSES.each do |class_type|
-        classes << " btn-#{class_type}" if element_params[class_type.to_sym]
+        classes << " btn-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       ACTIVE_CLASSES.each do |class_type|
-        classes << " #{class_type}" if element_params[class_type.to_sym]
+        classes << " #{class_type}" if check_for_class(element_params, class_type)
       end
 
       ::UiComponentHelper.instance_method(:button).bind(self).call(class: classes, type: button_type, &block)
@@ -35,7 +35,7 @@ module Bootstrap
     def button_group(*args, &block)
       element_params = args.first || {}
 
-      label = element_params[:"aria-label"] || ""
+      label = element_params[:"aria-label"] || element_params["aria-label"] || ""
       classes = element_params[:class] || ""
       classes << " btn-group"
 

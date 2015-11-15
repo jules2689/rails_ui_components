@@ -12,7 +12,7 @@ module Bootstrap
       src = element_params[:src] || ""
       
       IMAGE_CLASSES.each do |class_type|
-        classes << " img-#{class_type}" if element_params[class_type.to_sym]
+        classes << " img-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       ::UiComponentHelper.instance_method(:image).bind(self).call(classes: classes, alt: alt, src: src, &block)

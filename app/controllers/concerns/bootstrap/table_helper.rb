@@ -14,7 +14,7 @@ module Bootstrap
       classes << " table"
       
       GENERAL_CLASSES.each do |class_type|
-        classes << " table-#{class_type}" if element_params[class_type.to_sym]
+        classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       if element_params[:responsive]
@@ -31,7 +31,7 @@ module Bootstrap
 
       classes = element_params[:class] || ""
       HEAD_CLASSES.each do |class_type|
-        classes << " thead-#{class_type}" if element_params[class_type.to_sym]
+        classes << " thead-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       call_super(:thead, classes, &block)
@@ -42,7 +42,7 @@ module Bootstrap
 
       classes = element_params[:class] || ""
       CONTEXTUAL_CLASSES.each do |class_type|
-        classes << " table-#{class_type}" if element_params[class_type.to_sym]
+        classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       call_super(:tr, classes, &block)
@@ -53,7 +53,7 @@ module Bootstrap
 
       classes = element_params[:class] || ""
       CONTEXTUAL_CLASSES.each do |class_type|
-        classes << " table-#{class_type}" if element_params[class_type.to_sym]
+        classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
       call_super(:td, classes, &block)
