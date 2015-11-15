@@ -3,7 +3,7 @@ module Bootstrap
     include UiComponentHelper
 
     BG_CLASSES = %w( primary faded inverse ).freeze
-    NAV_CLASSES = %w( brand nav form toggler dark light fixed-bottom fixed-top ).freeze
+    NAV_CLASSES = %w( nav form toggler dark light fixed-bottom fixed-top ).freeze
 
     ##
     # TODO: RESPONSIVE NAVS
@@ -12,12 +12,8 @@ module Bootstrap
     def nav(*args, &block)
       element_params = args.first || {}
 
-      button_type = element_params[:type] || "button"
       classes = element_params[:class] || "navbar-light"
       classes << " navbar"
-
-      nav_title = element_params[:nav_title] || ""
-      nav_link = element_params[:nav_link] || "/"
 
       BG_CLASSES.each do |class_type|
         classes << " bg-#{class_type}" if element_params[class_type.to_sym]
