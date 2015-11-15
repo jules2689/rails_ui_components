@@ -48,7 +48,7 @@ module Bootstrap
       element_params = args.first || {}
       id = element_params[:id] || "responsive_nav"
 
-      ## TODO: Button not outputting
+      ## FIXME: TODO: Button not outputting
       div do
         button class: "navbar-toggler hidden-sm-up", type: "button", "data-toggle": "collapse", "data-target": "##{id}" do
           "&#9776;"
