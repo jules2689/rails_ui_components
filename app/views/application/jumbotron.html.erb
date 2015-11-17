@@ -1,0 +1,6 @@
+<% content_for :title do %>Jumbotron Elements<% end %>
+
+<%= table do %>
+  <%= render "element", element: :jumbotron %>
+  <%= render "element", element: :jumbotron, opts: { class: "banana", fluid: true } %>
+<% end %>

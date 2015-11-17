@@ -4,14 +4,15 @@
     <%= td class: "text-right" do %>
       <%= self.send element, opts.deep_dup do %>
         This is <%= indefinite_articlerize(element) %> tag
-        <% if yield %><%= yield %><% end %>
+        <%= yield %>
       <% end %>
     <% end %>
 
-    <%= td style: "overflow: scroll; max-width: 400px" do %>
+    <%= td do %>
       <%= pre id: element do %>
         <%= "<%=" %> <%= element %> <%= opts_to_string(opts.deep_dup) %> do %>
-          This is <%= indefinite_articlerize(element) %> tag <%= "#{yield}" %>
+          This is <%= indefinite_articlerize(element) %> tag
+          <%= yield :alert %>
         <%% end %>
       <% end %>
       <%= button info: true, class: "copyButton pull-right", "data-target" => element, sm: true do %>Copy<% end %>
@@ -24,14 +25,15 @@
     <%= td class: "text-right" do %>
       <%= self.send element, class: "banana" do %>
         This is <%= indefinite_articlerize(element) %> tag
-        <% if yield %><%= yield %><% end %>
+        <%= yield %>
       <% end %>
     <% end %>
 
-    <%= td style: "overflow: scroll; max-width: 400px" do %>
+    <%= td do %>
       <%= pre id: element do %>
         <%= "<%=" %> <%= element %> class: "banana" do %>
-          This is <%= indefinite_articlerize(element) %> tag <%= "#{yield}" %>
+          This is <%= indefinite_articlerize(element) %> tag
+          <%= yield :alert %>
         <%% end %>
       <% end %>
       <%= button info: true, class: "copyButton pull-right", "data-target" => element, sm: true do %>Copy<% end %>

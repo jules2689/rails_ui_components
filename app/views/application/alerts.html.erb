@@ -1,0 +1,15 @@
+<% content_for :title do %>Alert Elements<% end %>
+
+<%= table do %>
+
+  <% Bootstrap::AlertHelper::CONTEXTUAL_CLASSES.each do |class_type| %>
+    <%= render "element", element: :alert, opts: { class_type => true } %>
+  <% end %>
+
+  <% Bootstrap::AlertHelper::ALERT_CLASSES.each do |class_type| %>
+    <%= render layout: "element", locals: { element: :alert, opts: { class_type => true, info: true } } do %>
+      <%= button class: "close", "data-dismiss" => "alert", label: "Close" do %><%= span "aria-hidden" => "true" do %>&times;<% end %><%= span class: "sr-only" do %>Close<% end %><% end %>
+    <% end %>
+  <% end %>
+
+<% end %>

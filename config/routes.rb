@@ -5,5 +5,8 @@ Rails.application.routes.draw do
     get "table"
     get "headers"
     get "misc"
+    get "jumbotron"
+    get "labels"
+    get "alerts"
   end
 end

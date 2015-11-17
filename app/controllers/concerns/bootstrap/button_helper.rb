@@ -11,6 +11,7 @@ module Bootstrap
 
       button_type = element_params[:type] || "button"
       classes = element_params[:class] || ""
+      label = check_for_class(element_params, "aria-label") || check_for_class(element_params, "label")
       classes << " btn"
 
       BUTTON_CLASSES.each do |class_type|
@@ -30,6 +31,7 @@ module Bootstrap
         classes << " #{class_type}" if check_for_class(element_params, class_type)
       end
 
+      element_params["aria-label"] = label unless label.blank?
       element_params[:class] = classes
       element_params[:type] = button_type
       ::UiComponentHelper.instance_method(:button).bind(self).call(element_params, &block)
@@ -38,13 +40,13 @@ module Bootstrap
     def button_group(*args, &block)
       element_params = args.first || {}
 
-      label = element_params[:"aria-label"] || element_params["aria-label"] || ""
+      label = check_for_class(element_params, "aria-label") || check_for_class(element_params, "label")
       classes = element_params[:class] || ""
       classes << " btn-group"
 
       element_params[:class] = classes
       element_params[:role] = "group"
-      element_params["aria-label"] = label
+      element_params["aria-label"] = label unless label.blank?
       ::UiComponentHelper.instance_method(:div).bind(self).call(element_params, &block)
     end
 
