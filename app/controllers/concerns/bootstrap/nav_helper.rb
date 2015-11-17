@@ -26,7 +26,8 @@ module Bootstrap
       classes << " navbar-light" unless classes.include?("navbar-")
       classes << " bg-faded" unless classes.include?("bg-")
 
-      ::UiComponentHelper.instance_method(:nav).bind(self).call(class: classes.strip, &block)
+      element_params[:class] = classes
+      ::UiComponentHelper.instance_method(:nav).bind(self).call(element_params, &block)
     end
 
     def nav_brand(*args, &block)

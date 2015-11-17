@@ -17,12 +17,13 @@ module Bootstrap
         classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
-      if element_params[:responsive]
+      element_params[:class] = classes
+      if check_for_class(element_params, "responsive")
         div class: "table-responsive" do
-          call_super(:table, classes, &block)
+          call_super(:table, element_params, &block)
         end
       else
-        call_super(:table, classes, &block)
+        call_super(:table, element_params, &block)
       end
     end
 
@@ -34,7 +35,8 @@ module Bootstrap
         classes << " thead-#{class_type}" if check_for_class(element_params, class_type)
       end
 
-      call_super(:thead, classes, &block)
+      element_params[:class] = classes
+      call_super(:thead, element_params, &block)
     end
 
     def tr(*args, &block)
@@ -45,7 +47,8 @@ module Bootstrap
         classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
-      call_super(:tr, classes, &block)
+      element_params[:class] = classes
+      call_super(:tr, element_params, &block)
     end
 
     def td(*args, &block)
@@ -56,7 +59,8 @@ module Bootstrap
         classes << " table-#{class_type}" if check_for_class(element_params, class_type)
       end
 
-      call_super(:td, classes, &block)
+      element_params[:class] = classes
+      call_super(:td, element_params, &block)
     end
 
   end

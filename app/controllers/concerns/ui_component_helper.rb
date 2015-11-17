@@ -32,11 +32,14 @@ module UiComponentHelper
   end
 
   def call_super(method, args, &block)
-    ::UiComponentHelper.instance_method(method).bind(self).call(args: args, &block)
+    ::UiComponentHelper.instance_method(method).bind(self).call(args, &block)
   end
 
   def check_for_class(params, class_type)
-    params[class_type.to_sym] || params[class_type]
+    has_element = params[class_type.to_sym] || params[class_type]
+    params.delete(class_type.to_sym)
+    params.delete(class_type)
+    has_element
   end
 
 end 

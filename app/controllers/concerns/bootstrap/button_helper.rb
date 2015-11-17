@@ -14,9 +14,10 @@ module Bootstrap
       classes << " btn"
 
       BUTTON_CLASSES.each do |class_type|
-        if check_for_class(element_params, class_type) && check_for_class(element_params, "outline")
+        has_class_type = check_for_class(element_params, class_type)
+        if has_class_type && check_for_class(element_params, "outline")
           classes << " btn-#{class_type}-outline"
-        elsif check_for_class(element_params, class_type)
+        elsif has_class_type
           classes << " btn-#{class_type}"
         end
       end

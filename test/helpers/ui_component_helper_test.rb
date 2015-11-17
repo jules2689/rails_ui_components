@@ -91,7 +91,7 @@ class UiComponentHelperTest < ActionView::TestCase
   end
 
   test "super calls method" do
-    result = call_super :p, "banana" do
+    result = call_super :p, class: "banana" do
       "banana"
     end
     assert_equal "<p class=\"banana\">banana</p>", result

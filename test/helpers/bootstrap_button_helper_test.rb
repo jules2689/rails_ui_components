@@ -60,7 +60,7 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
     result = button_group class: "banana", "aria-label" => "Label" do
       "banana"
     end
-    assert_equal "<div class=\"banana btn-group\" role=\"group\" aria-label=\"Label\">banana</div>", result
+    assert_equal "<div class=\"banana btn-group\" aria-label=\"Label\" role=\"group\">banana</div>", result
   end
 
 end
