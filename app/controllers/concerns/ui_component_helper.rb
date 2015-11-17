@@ -31,8 +31,8 @@ module UiComponentHelper
     end
   end
 
-  def call_super(method, classes, &block)
-    ::UiComponentHelper.instance_method(method).bind(self).call(class: classes.strip, &block)
+  def call_super(method, args, &block)
+    ::UiComponentHelper.instance_method(method).bind(self).call(args: args, &block)
   end
 
   def check_for_class(params, class_type)

@@ -6,10 +6,11 @@
   <% end %>
 
   <%= td do %>
-    <%= pre do %>
+    <%= pre id: element do %>
       <%= "<%=" %> <%= element %> classes: "banana" do %>
         This is <%= indefinite_articlerize(element) %> tag
       <%% end %>
     <% end %>
+    <%= button info: true, class: "copyButton pull-right", "data-target" => element, sm: true do %>Copy<% end %>
   <% end %>
 <% end %>
