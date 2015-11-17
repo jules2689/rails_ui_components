@@ -39,7 +39,7 @@
 <% end %>
 
 <%= div class: "col-md-5" do %>
-  <%= pre do %>
+  <%= pre id: "table" do %>
 
     <%%= table classes: "blah", sm: true, striped: true, responsive: true do %>
       <%%= thead classes: "thead-banana" do %>
@@ -78,4 +78,5 @@
     <%% end %>
 
   <% end %>
+  <%= button info: true, class: "copyButton pull-right", "data-target" => "table", sm: true do %>Copy<% end %>
 <% end %>

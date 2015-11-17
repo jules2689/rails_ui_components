@@ -20,7 +20,7 @@
       <% end %>
     <% end %>
     <%= td do %>
-      <%= pre do %>
+      <%= pre id: "buttonGroup" do %>
         <%%= button_group "aria-label" => "Labelling" do %>
           <%%= button primary: true do %>
             Testing
@@ -33,6 +33,7 @@
           <%% end %>
         <%% end %>
       <% end %>
+      <%= button info: true, class: "copyButton pull-right", "data-target" => "buttonGroup", sm: true do %>Copy<% end %>
     <% end %>
   <% end %>
 
@@ -41,9 +42,10 @@
       <%= image src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRgDKJeeHPHtfNrm4Z9ghtI-8l6Bpdb-Vf0vcyk4cM9ZWSWWJsXYxmOQ3Q", alt: "hello", circle: true %>
     <% end %>
     <%= td do %>
-      <%= pre do %>
+      <%= pre id: "image" do %>
         <%%= image src: "...", alt: "hello", circle: true %>
       <% end %>
+      <%= button info: true, class: "copyButton pull-right", "data-target" => "image", sm: true do %>Copy<% end %>
     <% end %>
   <% end %>
 
