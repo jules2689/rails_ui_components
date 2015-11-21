@@ -1,0 +1,12 @@
+image:
+  default_html:
+    alt: ""
+    src: ""
+  class_sets:
+    image:
+      classes:
+        - rounded
+        - circle
+        - thumbnail
+        - responsive
+      prefix: img

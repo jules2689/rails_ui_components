@@ -10,7 +10,7 @@ class Bootstrap::LabelHelperTest < ActionView::TestCase
   end
 
   test "label render with contextual classes" do
-    Bootstrap::LabelHelper::CONTEXTUAL_CLASSES.each do |a_class|
+    classes_for(::Bootstrap::LabelHelper, "label", :label_config, "contextual").each do |a_class|
       result = label class: "banana", "#{a_class}" => true do
         "banana"
       end

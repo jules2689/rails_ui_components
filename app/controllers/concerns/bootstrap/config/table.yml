@@ -1,0 +1,54 @@
+table:
+  default_class: table
+  class_sets:
+    contextual:
+      classes:
+        - active
+        - success
+        - info
+        - warning
+        - danger
+      prefix: table
+    table:
+      classes:
+        - striped
+        - bordered
+        - hover
+        - inverse
+        - sm
+        - reflow
+      prefix: table
+
+thead:
+  class_sets:
+    thead:
+      classes:
+        - inverse
+        - default
+        - hover
+        - inverse
+        - sm
+        - reflow
+      prefix: thead
+
+tr:
+  class_sets:
+    contextual:
+      classes:
+        - active
+        - success
+        - info
+        - warning
+        - danger
+      prefix: table
+
+td:
+  class_sets:
+    contextual:
+      classes:
+        - active
+        - success
+        - info
+        - warning
+        - danger
+      prefix: table

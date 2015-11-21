@@ -10,7 +10,7 @@ class Bootstrap::JumbotronHelperTest < ActionView::TestCase
   end
 
   test "jumbotron render with classes" do
-    Bootstrap::JumbotronHelper::JUMBO_CLASSES.each do |a_class|
+    classes_for(::Bootstrap::JumbotronHelper, "jumbotron", :jumbotron_config, "jumbotron").each do |a_class|
       result = jumbotron class: "banana", "#{a_class}" => true do
         "banana"
       end

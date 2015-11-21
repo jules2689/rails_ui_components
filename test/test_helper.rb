@@ -5,6 +5,7 @@ require 'rails/test_help'
 require "mocha/test_unit"
 
 class ActiveSupport::TestCase
+  include ApplicationHelper
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 

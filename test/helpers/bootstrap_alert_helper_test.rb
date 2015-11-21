@@ -10,7 +10,7 @@ class Bootstrap::AlertHelperTest < ActionView::TestCase
   end
 
   test "alert render with contextual classes" do
-    Bootstrap::AlertHelper::CONTEXTUAL_CLASSES.each do |a_class|
+    classes_for(::Bootstrap::AlertHelper, "alert", :alert_config, "contextual").each do |a_class|
       result = alert class: "banana", "#{a_class}" => true do
         "banana"
       end
@@ -19,7 +19,7 @@ class Bootstrap::AlertHelperTest < ActionView::TestCase
   end
 
   test "alert render with alert classes" do
-    Bootstrap::AlertHelper::ALERT_CLASSES.each do |a_class|
+    classes_for(::Bootstrap::AlertHelper, "alert", :alert_config, "alert").each do |a_class|
       result = alert class: "banana", "#{a_class}" => true do
         "banana"
       end

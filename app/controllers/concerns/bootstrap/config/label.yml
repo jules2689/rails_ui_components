@@ -1,0 +1,14 @@
+label:
+  default_class: label
+  conditional_classes:
+    - class: label-pill
+      condition: pill
+  class_sets:
+    contextual:
+      classes:
+        - default
+        - primary
+        - success
+        - warning
+        - danger
+      prefix: label

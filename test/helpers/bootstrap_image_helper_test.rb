@@ -6,15 +6,15 @@ class Bootstrap::ImageHelperTest < ActionView::TestCase
     result = image class: "banana" do
       "banana"
     end
-    assert_equal "<img src=\"\" class=\"banana\" alt=\"\">banana</img>", result
+    assert_equal "<img class=\"banana\" alt=\"\" src=\"\">banana</img>", result
   end
 
   test "image render with classes" do
-    Bootstrap::ImageHelper::IMAGE_CLASSES.each do |i_class|
+    classes_for(::Bootstrap::ImageHelper, "image", :image_config, "image").each do |i_class|
       result = image class: "banana", "#{i_class}" => true do
         "banana"
       end
-      assert_equal "<img src=\"\" class=\"banana img-#{i_class}\" alt=\"\">banana</img>", result
+      assert_equal "<img class=\"banana img-#{i_class}\" alt=\"\" src=\"\">banana</img>", result
     end
   end
 
@@ -22,7 +22,7 @@ class Bootstrap::ImageHelperTest < ActionView::TestCase
     result = image class: "banana", alt: "alt", src: "..." do
       "banana"
     end
-    assert_equal "<img src=\"...\" class=\"banana\" alt=\"alt\">banana</img>", result
+    assert_equal "<img class=\"banana\" alt=\"alt\" src=\"...\">banana</img>", result
   end
 
 end

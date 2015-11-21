@@ -84,17 +84,10 @@ class UiComponentHelperTest < ActionView::TestCase
   end
 
   test "image render" do
-    result = self.send :image, classes: "banana", src: "...", alt: "alt" do
+    result = self.send :img, class: "banana", src: "...", alt: "alt" do
       "banana"
     end
-    assert_equal "<img src=\"...\" class=\"banana\" alt=\"alt\">banana</img>", result
-  end
-
-  test "super calls method" do
-    result = call_super :p, class: "banana" do
-      "banana"
-    end
-    assert_equal "<p class=\"banana\">banana</p>", result
+    assert_equal "<img class=\"banana\" src=\"...\" alt=\"alt\">banana</img>", result
   end
 
   test "methods strip classes" do

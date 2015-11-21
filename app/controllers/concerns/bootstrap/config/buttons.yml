@@ -1,0 +1,38 @@
+button:
+  default_html:
+    type: button
+  default_class: btn
+  shortcuts:
+    label: aria-label
+  class_sets:
+    contextual:
+      classes:
+        - primary
+        - secondary
+        - success
+        - warning
+        - danger
+        - link
+      prefix: btn
+      suffix:
+        modifier: outline
+        condition: outline
+    sizes:
+      classes:
+        - lg
+        - sm
+        - block
+      prefix: btn
+    active:
+      classes:
+        - active
+        - disabled
+      prefix: ""
+
+button_group:
+  default_html:
+    role: group
+  default_class: btn-group
+  shortcuts:
+    label: aria-label
+  class_sets:

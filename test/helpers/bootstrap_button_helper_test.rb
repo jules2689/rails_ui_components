@@ -20,11 +20,11 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
     result2 = button class: "banana", label: "test_label" do
       "banana"
     end
-    assert_equal "<button class=\"banana btn\" aria-label=\"test_label\" type=\"button\">banana</button>", result2
+    assert_equal "<button class=\"banana btn\" type=\"button\" aria-label=\"test_label\">banana</button>", result2
   end
 
   test "button render with classes" do
-    Bootstrap::ButtonHelper::BUTTON_CLASSES.each do |b_class|
+    classes("contextual").each do |b_class|
       result = button class: "banana", "#{b_class}" => true do
         "banana"
       end
@@ -33,7 +33,7 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
   end
 
   test "button render with classes and outline" do
-    Bootstrap::ButtonHelper::BUTTON_CLASSES.each do |b_class|
+    classes("contextual").each do |b_class|
       result = button class: "banana", "#{b_class}" => true, outline: true do
         "banana"
       end
@@ -42,7 +42,7 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
   end
 
   test "button render with size classes" do
-    Bootstrap::ButtonHelper::SIZE_CLASSES.each do |b_class|
+    classes("sizes").each do |b_class|
       result = button class: "banana", "#{b_class}" => true do
         "banana"
       end
@@ -51,7 +51,7 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
   end
 
   test "button render with active classes" do
-    Bootstrap::ButtonHelper::ACTIVE_CLASSES.each do |b_class|
+   classes("active").each do |b_class|
       result = button class: "banana", "#{b_class}" => true do
         "banana"
       end
@@ -72,12 +72,18 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
     result = button_group class: "banana", "aria-label" => "Label" do
       "banana"
     end
-    assert_equal "<div class=\"banana btn-group\" role=\"group\" aria-label=\"Label\">banana</div>", result
+    assert_equal "<div class=\"banana btn-group\" aria-label=\"Label\" role=\"group\">banana</div>", result
 
     result2 = button_group class: "banana", label: "Label" do
       "banana"
     end
     assert_equal "<div class=\"banana btn-group\" role=\"group\" aria-label=\"Label\">banana</div>", result2
+  end
+
+  private
+
+  def classes(class_set)
+    classes_for(::Bootstrap::ButtonHelper, "button", :button_config, class_set)
   end
 
 end

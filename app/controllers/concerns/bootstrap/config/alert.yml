@@ -1,0 +1,21 @@
+alert:
+  default_html:
+    role: alert
+  default_class: alert
+  shortcuts:
+    label: aria-label
+  conditional_classes:
+    - class: fade in
+      condition: fade_in
+  class_sets:
+    contextual:
+      classes:
+        - info
+        - success
+        - warning
+        - danger
+      prefix: alert
+    alert:
+      classes:
+        - dismissable
+      prefix: alert

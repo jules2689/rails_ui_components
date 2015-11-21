@@ -1,0 +1,7 @@
+jumbotron:
+  default_class: jumbotron
+  class_sets:
+    jumbotron:
+      classes:
+        - fluid
+      prefix: jumbotron

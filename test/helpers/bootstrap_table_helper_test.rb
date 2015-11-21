@@ -12,7 +12,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "table render with classes" do
-    Bootstrap::TableHelper::GENERAL_CLASSES.each do |t_class|
+    classes_for(::Bootstrap::TableHelper, "table", :table_config, "table").each do |t_class|
       result = table class: "banana", "#{t_class}" => true do
         "banana"
       end
@@ -37,7 +37,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "thead render with classes" do
-    Bootstrap::TableHelper::HEAD_CLASSES.each do |t_class|
+    classes_for(::Bootstrap::TableHelper, "thead", :table_config, "thead").each do |t_class|
       result = thead class: "banana", "#{t_class}" => true do
         "banana"
       end
@@ -55,7 +55,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "tr render with classes" do
-    Bootstrap::TableHelper::CONTEXTUAL_CLASSES.each do |t_class|
+    classes_for(::Bootstrap::TableHelper, "tr", :table_config, "contextual").each do |t_class|
       result = tr class: "banana", "#{t_class}".to_sym => true do
         "banana"
       end
@@ -73,7 +73,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "td render with classes" do
-    Bootstrap::TableHelper::CONTEXTUAL_CLASSES.each do |t_class|
+    classes_for(::Bootstrap::TableHelper, "td", :table_config, "contextual").each do |t_class|
       result = td class: "banana", "#{t_class}" => true do
         "banana"
       end

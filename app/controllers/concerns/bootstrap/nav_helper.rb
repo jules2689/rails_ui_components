@@ -16,11 +16,11 @@ module Bootstrap
       classes << " navbar"
 
       BG_CLASSES.each do |class_type|
-        classes << " bg-#{class_type}" if check_for_class(element_params, class_type)
+        classes << " bg-#{class_type}" if check_params_for_value(element_params, class_type)
       end
 
       NAV_CLASSES.each do |class_type|
-        classes << " navbar-#{class_type}" if check_for_class(element_params, class_type)
+        classes << " navbar-#{class_type}" if check_params_for_value(element_params, class_type)
       end
 
       classes << " navbar-light" unless classes.include?("navbar-")
