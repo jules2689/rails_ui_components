@@ -1,4 +1,5 @@
 label:
+  bind_element: span
   default_class: label
   conditional_classes:
     - class: label-pill

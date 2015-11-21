@@ -1,4 +1,5 @@
 table:
+  bind_element: table
   default_class: table
   class_sets:
     contextual:
@@ -20,6 +21,7 @@ table:
       prefix: table
 
 thead:
+  bind_element: thead
   class_sets:
     thead:
       classes:
@@ -32,6 +34,7 @@ thead:
       prefix: thead
 
 tr:
+  bind_element: tr
   class_sets:
     contextual:
       classes:
@@ -43,6 +46,7 @@ tr:
       prefix: table
 
 td:
+  bind_element: td
   class_sets:
     contextual:
       classes:

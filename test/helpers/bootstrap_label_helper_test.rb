@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class Bootstrap::LabelHelperTest < ActionView::TestCase
-
+  include Bootstrap::Helper
+  
   test "label render" do
     result = label class: "banana" do
       "banana"
@@ -10,7 +11,7 @@ class Bootstrap::LabelHelperTest < ActionView::TestCase
   end
 
   test "label render with contextual classes" do
-    classes_for(::Bootstrap::LabelHelper, "label", :label_config, "contextual").each do |a_class|
+    classes_for("label", :label_config, "contextual").each do |a_class|
       result = label class: "banana", "#{a_class}" => true do
         "banana"
       end

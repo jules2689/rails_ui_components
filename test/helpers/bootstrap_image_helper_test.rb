@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class Bootstrap::ImageHelperTest < ActionView::TestCase
-
+  include Bootstrap::Helper
+  
   test "image render" do
     result = image class: "banana" do
       "banana"
@@ -10,7 +11,7 @@ class Bootstrap::ImageHelperTest < ActionView::TestCase
   end
 
   test "image render with classes" do
-    classes_for(::Bootstrap::ImageHelper, "image", :image_config, "image").each do |i_class|
+    classes_for("image", :image_config, "image").each do |i_class|
       result = image class: "banana", "#{i_class}" => true do
         "banana"
       end

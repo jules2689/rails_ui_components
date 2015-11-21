@@ -1,4 +1,5 @@
 jumbotron:
+  bind_element: div
   default_class: jumbotron
   class_sets:
     jumbotron:

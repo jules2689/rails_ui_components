@@ -1,4 +1,5 @@
 image:
+  bind_element: img
   default_html:
     alt: ""
     src: ""

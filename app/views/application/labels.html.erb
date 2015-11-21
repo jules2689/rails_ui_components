@@ -2,14 +2,14 @@
 
 <%= h2 do %>Contextual Classes<% end %>
 <%= table do %>
-  <% classes_for(::Bootstrap::LabelHelper, "label", :label_config, "contextual").each do |class_type| %>
+  <% classes_for("label", :label_config, "contextual").each do |class_type| %>
     <%= render "element", element: :label, opts: { class_type => true } %>
   <% end %>
 <% end %>
 
 <%= h2 do %>Pills<% end %>
 <%= table do %>
-  <% classes_for(::Bootstrap::LabelHelper, "label", :label_config, "contextual").each do |class_type| %>
+  <% classes_for("label", :label_config, "contextual").each do |class_type| %>
     <%= render "element", element: :label, opts: { class_type => true, pill: true } %>
   <% end %>
 <% end %>

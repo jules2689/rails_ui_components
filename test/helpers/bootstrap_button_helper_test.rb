@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class Bootstrap::ButtonHelperTest < ActionView::TestCase
-
+  include Bootstrap::Helper
+  
   # Button
 
   test "button render" do
@@ -83,7 +84,7 @@ class Bootstrap::ButtonHelperTest < ActionView::TestCase
   private
 
   def classes(class_set)
-    classes_for(::Bootstrap::ButtonHelper, "button", :button_config, class_set)
+    classes_for("button", :button_config, class_set)
   end
 
 end

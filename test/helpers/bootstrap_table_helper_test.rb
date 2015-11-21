@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class Bootstrap::TableHelperTest < ActionView::TestCase
-
+  include Bootstrap::Helper
+  
   # Table
 
   test "table render" do
@@ -12,19 +13,12 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "table render with classes" do
-    classes_for(::Bootstrap::TableHelper, "table", :table_config, "table").each do |t_class|
+    classes_for("table", :table_config, "table").each do |t_class|
       result = table class: "banana", "#{t_class}" => true do
         "banana"
       end
       assert_equal "<table class=\"banana table table-#{t_class}\">banana</table>", result
     end
-  end
-
-  test "table render with responsive" do
-    result = table class: "banana", responsive: true do
-      "banana"
-    end
-    assert_equal "<div class=\"table-responsive\"><table class=\"banana table\">banana</table></div>", result
   end
 
   # Thead
@@ -37,7 +31,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "thead render with classes" do
-    classes_for(::Bootstrap::TableHelper, "thead", :table_config, "thead").each do |t_class|
+    classes_for("thead", :table_config, "thead").each do |t_class|
       result = thead class: "banana", "#{t_class}" => true do
         "banana"
       end
@@ -55,7 +49,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "tr render with classes" do
-    classes_for(::Bootstrap::TableHelper, "tr", :table_config, "contextual").each do |t_class|
+    classes_for("tr", :table_config, "contextual").each do |t_class|
       result = tr class: "banana", "#{t_class}".to_sym => true do
         "banana"
       end
@@ -73,7 +67,7 @@ class Bootstrap::TableHelperTest < ActionView::TestCase
   end
 
   test "td render with classes" do
-    classes_for(::Bootstrap::TableHelper, "td", :table_config, "contextual").each do |t_class|
+    classes_for("td", :table_config, "contextual").each do |t_class|
       result = td class: "banana", "#{t_class}" => true do
         "banana"
       end

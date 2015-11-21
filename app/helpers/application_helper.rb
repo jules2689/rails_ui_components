@@ -10,8 +10,8 @@ module ApplicationHelper
     end.join(", ")
   end
 
-  def classes_for(_module, type, config, class_set)
-    button_config = _module.instance_method(config).bind(self).call()
+  def classes_for(type, config, class_set)
+    button_config = ::Bootstrap::Helper.instance_method(config).bind(self).call()
     button_config[type]["class_sets"][class_set]["classes"]
   end
 
