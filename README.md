@@ -6,7 +6,7 @@ Wrapping Bootstrap Elements in UI Components for use in Rails Apps.
 
 Components are testable, predictable, and isolated. Using UI Components means that your UI is tested rather than relying on falliable and error prone HTML/ERB writing.
 
-*Demo* : (https://rails-ui.herokuapp.com/)[https://rails-ui.herokuapp.com/]
+*[Demo Components/Docs](https://rails-ui.herokuapp.com/)*
 
 
 Development
