@@ -9,7 +9,7 @@ module UiComponentHelper
   LIST = %w( ul ol dl li )
   CODE = %w( code pre section kbd var samp )
   FIGURE = %w( figure figcaption )
-  MISC = %w( attr button img )
+  MISC = %w( attr button img progress )
   NAV = %w( nav )
   ALL_SELF_CONTAINED_ELEMENTS = [HEADERS, TEXT, BLOCK, CODE, MISC, FIGURE].flatten.freeze
   ALL_ELEMENTS = [ALL_SELF_CONTAINED_ELEMENTS, LIST, TABLE, NAV].flatten.freeze

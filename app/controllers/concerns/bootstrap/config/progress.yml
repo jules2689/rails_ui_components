@@ -1,0 +1,16 @@
+progress:
+  bind_element: progress
+  default_class: progress
+  class_sets:
+    contextual:
+      classes:
+        - info
+        - success
+        - warning
+        - danger
+      prefix: progress
+    progress:
+      classes:
+        - striped
+        - animated
+      prefix: progress

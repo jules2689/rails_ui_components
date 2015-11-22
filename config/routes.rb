@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get "jumbotron"
     get "labels"
     get "alerts"
+    get "progress"
   end
 end

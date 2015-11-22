@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Rails UI Components - <%= yield :title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,13 +12,10 @@
   <%= nav do %>
     <%= div class: "container" do %>
       <%= nav_brand do %><%= yield :title %><% end %>
-      <%= nav_links do %>
-        <%= nav_link link: "table" do %>Table Elements<% end %>
-        <%= nav_link link: "headers" do %>Header Elements<% end %>
-        <%= nav_link link: "alerts" do %>Alert Elements<% end %>
-        <%= nav_link link: "labels" do %>Label Elements<% end %>
-        <%= nav_link link: "jumbotron" do %>Jumbotron Elements<% end %>
-        <%= nav_link link: "misc" do %>Misc Elements<% end %>
+      <%= nav_dropdown class: "pull-right", button: { secondary: true } do %>
+        <% app_routes.each do |route| %>
+          <%= a href: route.to_s, class: "dropdown-item" do %><%= route.to_s.humanize %> Elements<% end %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>

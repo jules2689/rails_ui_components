@@ -15,4 +15,11 @@ module ApplicationHelper
     button_config[type]["class_sets"][class_set]["classes"]
   end
 
+  def app_routes
+    r = ApplicationController._routes.named_routes.names
+    r.delete(:root)
+    r.reject! { |l| l.to_s.start_with?("rail") }
+    r
+  end
+
 end

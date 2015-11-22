@@ -1,0 +1,13 @@
+<% content_for :title do %>Progress Elements<% end %>
+
+<%= table do %>
+
+  <% classes_for("progress", :progress_config, "contextual").each do |class_type| %>
+    <%= render "element", element: :progress, opts: { class_type => true, max: "100", value: rand(0...100).to_s } %>
+  <% end %>
+
+  <% classes_for("progress", :progress_config, "progress").each do |class_type| %>
+    <%= render "element", element: :progress, opts: { class_type => true, max: "100", value: rand(0...100).to_s } %>
+  <% end %>
+
+<% end %>

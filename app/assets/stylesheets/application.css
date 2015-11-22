@@ -2,3 +2,55 @@
  *= require_tree .
  *= require_self
  */
+
+progress {
+  min-width: 200px;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+
+  .table tr:not(:first-child) {
+    border-top: 1px solid #eceeef;
+  }
+
+  .table td, .table th {
+    border: none;
+    width: 50%;
+  }
+
+  pre {
+    max-width: 400px;
+    margin-left: -80px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .table tr:not(:first-child) {
+    border-top: 1px solid #eceeef;
+  }
+
+  .table td, .table th {
+    display: block;
+    border: none;
+    width: 100%;
+  }
+
+  pre {
+    max-width: 400px;
+    margin-left: -80px;
+  }
+
+}
